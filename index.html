@@ -250,6 +250,133 @@
             transform: translateY(0);
         }
 
+        /* Website Promotion Section */
+        .website-promotion {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 140, 0, 0.15));
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            animation: slideInUp 1s ease-out 1s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promotion-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .bangla-text {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .decorative-line {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffd700, #ff8c00, #ffd700, transparent);
+            margin: 1rem auto;
+            width: 60%;
+            border-radius: 2px;
+            animation: shimmer 2s infinite;
+        }
+
+        .bangla-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffd700, #ff8c00, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .bangla-description {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .website-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            color: #000;
+            text-decoration: none;
+            border-radius: 35px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.4);
+            border: 3px solid #ffd700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            animation: goldenPulse 2s infinite;
+        }
+
+        .website-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.8), 0 0 70px rgba(255, 215, 0, 0.6);
+            background: linear-gradient(45deg, #ff8c00, #ffd700);
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+        }
+
+        .decorative-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        .star:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .star:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: 0.5s;
+        }
+
+        .star:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(4) {
+            bottom: 30%;
+            right: 10%;
+            animation-delay: 1.5s;
+        }
+
+        .star:nth-child(5) {
+            top: 50%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
         .subtitle {
             font-size: 1.3rem;
             margin-bottom: 3rem;
@@ -380,6 +507,33 @@
             }
         }
 
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            }
+            to {
+                text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.6);
+            }
+        }
+
+        @keyframes goldenPulse {
+            0%, 100% {
+                box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(255, 215, 0, 0.8), 0 0 70px rgba(255, 215, 0, 0.6);
+            }
+        }
+
         @media (max-width: 768px) {
             .main-heading {
                 font-size: 2.5rem;
@@ -429,6 +583,28 @@
             .resource-button {
                 padding: 10px 20px;
                 font-size: 0.9rem;
+            }
+
+            .website-promotion {
+                margin-top: 2rem;
+                padding: 2rem 1rem;
+            }
+
+            .bangla-title {
+                font-size: 1.8rem;
+            }
+
+            .bangla-description {
+                font-size: 1.1rem;
+            }
+
+            .website-button {
+                padding: 16px 32px;
+                font-size: 1.1rem;
+            }
+
+            .decorative-elements .star {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -494,6 +670,20 @@
                         📁 Resources
                     </a>
                 </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-header">
+                    <h3 class="class-title">Class 3</h3>
+                    <div class="class-badge">New</div>
+                </div>
+                <p class="class-description">How To use Auto Caption in Adobe Premiere pro 2025</p>
+                <a href="https://www.youtube.com/watch?v=-tmdXFm6FJE" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="class-button">
+                    Enter Class 3
+                </a>
             </div>
         </div>
     </div>
