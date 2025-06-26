@@ -123,6 +123,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            margin-bottom: 2rem;
         }
 
         .class-card:hover {
@@ -210,6 +211,43 @@
 
         .class-button:active {
             transform: translateY(0) scale(1);
+        }
+
+        .class-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .resource-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            border: 2px solid #ff6b6b;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(45deg, #ee5a52, #ff6b6b);
+        }
+
+        .resource-button:active {
+            transform: translateY(0);
         }
 
         .subtitle {
@@ -382,6 +420,16 @@
                 padding: 12px 24px;
                 font-size: 1rem;
             }
+
+            .class-buttons {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .resource-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -424,6 +472,28 @@
                    class="class-button">
                     Enter Class 1
                 </a>
+            </div>
+
+            <div class="class-card">
+                <div class="class-header">
+                    <h3 class="class-title">Class 2</h3>
+                    <div class="class-badge">New</div>
+                </div>
+                <p class="class-description">Basic Of Adobe Premiere pro 2025</p>
+                <div class="class-buttons">
+                    <a href="https://youtu.be/x1se6bRKKbw" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="class-button">
+                        Enter Class 2
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1AfcObC5acqmw2_EXX1_b4TrnCOl0IgV5?usp=sharing" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="resource-button">
+                        📁 Resources
+                    </a>
+                </div>
             </div>
         </div>
     </div>
