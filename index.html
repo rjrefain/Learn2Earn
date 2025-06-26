@@ -118,12 +118,23 @@
         .class-card {
             background: rgba(255, 255, 255, 0.12);
             border-radius: 15px;
-            padding: 2rem;
+            padding: 0;
             border: 1px solid rgba(255, 255, 255, 0.25);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             margin-bottom: 2rem;
+        }
+
+        .class-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .class-content {
+            padding: 2rem;
         }
 
         .class-card:hover {
@@ -603,8 +614,9 @@
                 font-size: 1.1rem;
             }
 
-            .decorative-elements .star {
-                font-size: 1.2rem;
+            .classes-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
     </style>
@@ -637,53 +649,68 @@
             <h2 class="course-title">Adobe Premiere Pro Zero to Hero Course</h2>
             
             <div class="class-card">
-                <div class="class-header">
-                    <h3 class="class-title">Class 1</h3>
-                    <div class="class-badge">New</div>
-                </div>
-                <p class="class-description">How to install Adobe Premiere Pro 2025 Step by Step</p>
-                <a href="https://drive.google.com/file/d/1aTDsHuA_R1uoloeMEUkGKB5nIOVl6gO6/view?usp=drive_link" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="class-button">
-                    Enter Class 1
-                </a>
-            </div>
-
-            <div class="class-card">
-                <div class="class-header">
-                    <h3 class="class-title">Class 2</h3>
-                    <div class="class-badge">New</div>
-                </div>
-                <p class="class-description">Basic Of Adobe Premiere pro 2025</p>
-                <div class="class-buttons">
-                    <a href="https://youtu.be/x1se6bRKKbw" 
+                <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Adobe%20Premiere%20pro%20Crack%20full%20installation%20thumbnail.png" 
+                     alt="How to install Adobe Premiere Pro 2025 Step by Step" 
+                     class="class-thumbnail">
+                <div class="class-content">
+                    <div class="class-header">
+                        <h3 class="class-title">Class 1</h3>
+                        <div class="class-badge">New</div>
+                    </div>
+                    <p class="class-description">How to install Adobe Premiere Pro 2025 Step by Step</p>
+                    <a href="https://drive.google.com/file/d/1aTDsHuA_R1uoloeMEUkGKB5nIOVl6gO6/view?usp=drive_link" 
                        target="_blank" 
                        rel="noopener noreferrer"
                        class="class-button">
-                        Enter Class 2
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/1AfcObC5acqmw2_EXX1_b4TrnCOl0IgV5?usp=sharing" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="resource-button">
-                        📁 Resources
+                        Enter Class 1
                     </a>
                 </div>
             </div>
 
             <div class="class-card">
-                <div class="class-header">
-                    <h3 class="class-title">Class 3</h3>
-                    <div class="class-badge">New</div>
+                <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Basic%20Of%20Adobe%20Premiere%20pro%202025.png" 
+                     alt="Basic Of Adobe Premiere pro 2025" 
+                     class="class-thumbnail">
+                <div class="class-content">
+                    <div class="class-header">
+                        <h3 class="class-title">Class 2</h3>
+                        <div class="class-badge">New</div>
+                    </div>
+                    <p class="class-description">Basic Of Adobe Premiere pro 2025</p>
+                    <div class="class-buttons">
+                        <a href="https://youtu.be/x1se6bRKKbw" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="class-button">
+                            Enter Class 2
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1AfcObC5acqmw2_EXX1_b4TrnCOl0IgV5?usp=sharing" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="resource-button">
+                            📁 Resources
+                        </a>
+                    </div>
                 </div>
-                <p class="class-description">How To use Auto Caption in Adobe Premiere pro 2025</p>
-                <a href="https://www.youtube.com/watch?v=-tmdXFm6FJE" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="class-button">
-                    Enter Class 3
-                </a>
+            </div>
+
+            <div class="class-card">
+                <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/How%20to%20make%20Auto%20Caption%20in%20Adobe%20Premire%20Pro%202025.jpg" 
+                     alt="How To use Auto Caption in Adobe Premiere pro 2025" 
+                     class="class-thumbnail">
+                <div class="class-content">
+                    <div class="class-header">
+                        <h3 class="class-title">Class 3</h3>
+                        <div class="class-badge">New</div>
+                    </div>
+                    <p class="class-description">How To use Auto Caption in Adobe Premiere pro 2025</p>
+                    <a href="https://www.youtube.com/watch?v=-tmdXFm6FJE" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="class-button">
+                        Enter Class 3
+                    </a>
+                </div>
             </div>
         </div>
     </div>
