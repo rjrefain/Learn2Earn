@@ -1,6 +1,3 @@
-@keyframes neonBlink {
-            0% {
-                box-shadow: 0 0 15px rgba(76, 175, 80, 0.6), 0 0 30px rgba(76,<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -225,12 +222,12 @@
         }
 
         .classes-grid::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, #4caf50, #66bb6a);
+            background: linear-gradient(45deg, #00bfff, #1e90ff);
             border-radius: 10px;
         }
 
         .classes-grid::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, #66bb6a, #4caf50);
+            background: linear-gradient(45deg, #1e90ff, #00bfff);
         }
 
         .class-card {
@@ -289,7 +286,7 @@
         }
 
         .class-badge {
-            background: linear-gradient(45deg, #ffd700, #ffb300);
+            background: linear-gradient(45deg, #ffff00, #ffeb3b);
             color: #1565c0;
             padding: 4px 12px;
             border-radius: 20px;
@@ -298,7 +295,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             animation: pulse 2s infinite;
-            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 2px 8px rgba(255, 255, 0, 0.3);
         }
 
         .class-description {
@@ -409,7 +406,7 @@
         .donation-title {
             font-size: 2.2rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            background: linear-gradient(45deg, #ffff00, #ffeb3b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -426,15 +423,15 @@
         .donation-button {
             display: inline-block;
             padding: 15px 30px;
-            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            background: linear-gradient(45deg, #ffff00, #ffeb3b);
             color: #000;
             text-decoration: none;
             border-radius: 30px;
             font-size: 1.1rem;
             font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
-            border: 2px solid #ffd700;
+            box-shadow: 0 6px 20px rgba(255, 255, 0, 0.3);
+            border: 2px solid #ffff00;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -442,14 +439,14 @@
 
         .donation-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
-            background: linear-gradient(45deg, #ff8c00, #ffd700);
+            box-shadow: 0 10px 30px rgba(255, 255, 0, 0.4);
+            background: linear-gradient(45deg, #ffeb3b, #ffff00);
         }
 
         /* Footer */
         .footer {
-            background: linear-gradient(135deg, #1e88e5, #1565c0, #0d47a1);
-            color: white;
+            background: linear-gradient(135deg, #4caf50, #66bb6a, #388e3c);
+            color: #ffd700;
             padding: 4rem 2rem 2rem;
             margin-top: 4rem;
             text-align: center;
@@ -465,7 +462,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #ffd700, #ffb300, #4caf50, #66bb6a, #1e88e5, #42a5f5);
+            background: linear-gradient(90deg, #ffff00, #ffeb3b, #fff176, #ffee58, #ffff00);
             animation: colorWave 3s linear infinite;
         }
 
@@ -480,13 +477,13 @@
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 2rem;
-            background: linear-gradient(45deg, #ffd700, #ffb300, #ffd700);
+            background: linear-gradient(45deg, #ffff00, #ffeb3b, #ffff00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             position: relative;
             animation: titleGlow 2s ease-in-out infinite alternate;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 30px rgba(255, 255, 0, 0.5);
         }
 
         .footer-title::before {
@@ -511,14 +508,14 @@
 
         .footer-email {
             font-size: 1.4rem;
-            color: #4caf50;
+            color: #ffff00;
             margin-bottom: 2rem;
             font-weight: 600;
             position: relative;
             padding: 15px 30px;
-            background: rgba(76, 175, 80, 0.1);
+            background: rgba(255, 255, 0, 0.1);
             border-radius: 50px;
-            border: 2px solid #4caf50;
+            border: 2px solid #ffff00;
             display: inline-block;
             transition: all 0.3s ease;
             animation: emailPulse 3s ease-in-out infinite;
@@ -526,8 +523,8 @@
 
         .footer-email:hover {
             transform: scale(1.05);
-            background: rgba(76, 175, 80, 0.2);
-            box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+            background: rgba(255, 255, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.4);
         }
 
         .footer-email::before {
@@ -541,19 +538,20 @@
             font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #fff59d;
             position: relative;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 0, 0.1);
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 0, 0.3);
+            font-weight: 500;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-top: 1px solid rgba(255, 255, 0, 0.3);
             padding-top: 1.5rem;
             font-size: 0.9rem;
-            opacity: 0.7;
+            color: #fff59d;
             position: relative;
         }
 
@@ -569,10 +567,10 @@
 
         .footer-star {
             position: absolute;
-            color: #ffd700;
+            color: #ffff00;
             font-size: 1.5rem;
             animation: twinkle 2s ease-in-out infinite;
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
         .footer-star:nth-child(1) {
@@ -669,35 +667,47 @@
             }
         }
 
-        @keyframes neonBlink {
+        @keyframes neonPulseBlue {
             0% {
-                box-shadow: 0 0 15px rgba(76, 175, 80, 0.6), 0 0 30px rgba(76, 175, 80, 0.4);
-                border-color: #4caf50;
-            }
-            100% {
-                box-shadow: 0 0 25px rgba(76, 175, 80, 0.9), 0 0 50px rgba(76, 175, 80, 0.7);
-                border-color: #66bb6a;
-            }
-        }
-
-        @keyframes neonPulse {
-            0% {
-                background: linear-gradient(45deg, #4caf50, #66bb6a);
+                background: linear-gradient(45deg, #00bfff, #1e90ff);
             }
             50% {
-                background: linear-gradient(45deg, #66bb6a, #4caf50);
+                background: linear-gradient(45deg, #1e90ff, #00bfff);
             }
             100% {
-                background: linear-gradient(45deg, #4caf50, #66bb6a);
+                background: linear-gradient(45deg, #00bfff, #1e90ff);
             }
         }
 
         @keyframes heroGlow {
             from {
-                text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.2);
+                text-shadow: 2px 2px 4px rgba(255, 255, 0, 0.2);
             }
             to {
-                text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.6);
+                text-shadow: 2px 2px 20px rgba(255, 255, 0, 0.6);
+            }
+        }
+
+        @keyframes neonBlinkBlue {
+            0% {
+                box-shadow: 0 0 15px rgba(0, 191, 255, 0.6), 0 0 30px rgba(0, 191, 255, 0.4);
+                border-color: #00bfff;
+            }
+            100% {
+                box-shadow: 0 0 25px rgba(0, 191, 255, 0.9), 0 0 50px rgba(0, 191, 255, 0.7);
+                border-color: #1e90ff;
+            }
+        }
+
+        @keyframes neonPulseBlue {
+            0% {
+                background: linear-gradient(45deg, #00bfff, #1e90ff);
+            }
+            50% {
+                background: linear-gradient(45deg, #1e90ff, #00bfff);
+            }
+            100% {
+                background: linear-gradient(45deg, #00bfff, #1e90ff);
             }
         }
 
@@ -742,10 +752,10 @@
 
         @keyframes emailPulse {
             0%, 100% {
-                box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+                box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
             }
             50% {
-                box-shadow: 0 0 20px rgba(76, 175, 80, 0.6), 0 0 30px rgba(76, 175, 80, 0.3);
+                box-shadow: 0 0 20px rgba(255, 255, 0, 0.6), 0 0 30px rgba(255, 255, 0, 0.3);
             }
         }
 
@@ -951,7 +961,7 @@
     <div class="donation-section">
         <h3 class="donation-title">Support Our Mission</h3>
         <p class="donation-description">
-            Our Mission is to Make The Young Generation Expert in Digital Skills. Your donation can help us reach more students and create better educational content.
+            আমাদের লক্ষ্য হলো তরুণ প্রজন্মকে ডিজিটাল দক্ষতায় পারদর্শী করে তোলা। আপনার অনুদান আমাদের আরও বেশি শিক্ষার্থীর কাছে পৌঁছাতে এবং উন্নত শিক্ষামূলক কন্টেন্ট তৈরি করতে সাহায্য করবে।
         </p>
         <a href="#" class="donation-button">
             💖 Donate Now
@@ -976,7 +986,7 @@
             <h4 class="footer-title">Learn2Earn</h4>
             <div class="footer-email">contact@learn2earnbd.com</div>
             <p class="footer-mission">
-                Our Mission is to Make The Young Generation Expert in Digital Skills. We believe in empowering students with practical knowledge that helps them earn while they learn.
+                আমাদের লক্ষ্য হলো তরুণ প্রজন্মকে ডিজিটাল দক্ষতায় পারদর্শী করে তোলা। আমরা বিশ্বাস করি শিক্ষার্থীদের ব্যবহারিক জ্ঞান দিয়ে ক্ষমতায়ন করতে যা তাদের শেখার সাথে সাথে উপার্জন করতে সাহায্য করে।
             </p>
             <div class="footer-bottom">
                 © 2025 Learn2Earn. All rights reserved. | Empowering Digital Skills for the Future
