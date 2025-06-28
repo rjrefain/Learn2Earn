@@ -1,3 +1,6 @@
+@keyframes neonBlink {
+            0% {
+                box-shadow: 0 0 15px rgba(76, 175, 80, 0.6), 0 0 30px rgba(76,<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -411,6 +414,8 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 1rem;
+            -webkit-text-stroke: 2px #333;
+            text-stroke: 2px #333;
         }
 
         .donation-description {
@@ -784,17 +789,19 @@
 
         @media (max-width: 768px) {
             .main-heading {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                gap: 0.5rem;
             }
             
             .channel-button {
-                padding: 16px 30px;
-                font-size: 1rem;
+                padding: 14px 28px;
+                font-size: 0.9rem;
             }
             
             .subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
                 margin-bottom: 2rem;
+                padding: 0 1rem;
             }
             
             .container {
@@ -807,23 +814,52 @@
             }
 
             .course-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .course-title::before,
+            .course-title::after {
+                width: 150px;
+                height: 3px;
             }
 
             .classes-grid {
-                flex-direction: row;
-                overflow-x: auto;
+                flex-direction: column;
+                overflow-x: visible;
                 gap: 1.5rem;
+                align-items: center;
             }
 
             .class-card {
-                width: 280px;
-                height: 420px;
+                width: 100%;
+                max-width: 350px;
+                height: auto;
+                min-height: 400px;
             }
 
-            .logo {
-                width: 60px;
-                height: 60px;
+            .class-thumbnail {
+                height: 160px;
+            }
+
+            .class-content {
+                padding: 1.2rem;
+            }
+
+            .class-title {
+                font-size: 1.2rem;
+            }
+
+            .class-description {
+                font-size: 0.9rem;
+                height: auto;
+                min-height: 50px;
+            }
+
+            .class-button, .resource-button {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 0.85rem;
             }
 
             .class-buttons {
@@ -831,8 +867,87 @@
                 gap: 0.5rem;
             }
 
-            .class-button, .resource-button {
-                width: 100%;
+            .donation-section {
+                margin-top: 2rem;
+                padding: 2rem 1rem;
+            }
+
+            .donation-title {
+                font-size: 1.8rem;
+            }
+
+            .donation-description {
+                font-size: 1rem;
+                padding: 0 0.5rem;
+            }
+
+            .donation-button {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+
+            .footer {
+                padding: 3rem 1rem 2rem;
+            }
+
+            .footer-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-title::before,
+            .footer-title::after {
+                display: none;
+            }
+
+            .footer-email {
+                font-size: 1.1rem;
+                padding: 12px 24px;
+            }
+
+            .footer-mission {
+                font-size: 1rem;
+                padding: 15px;
+            }
+
+            .footer-star {
+                font-size: 1.2rem;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-heading {
+                font-size: 1.8rem;
+            }
+
+            .course-title {
+                font-size: 1.5rem;
+            }
+
+            .donation-title {
+                font-size: 1.5rem;
+            }
+
+            .footer-title {
+                font-size: 1.8rem;
+            }
+
+            .class-card {
+                max-width: 300px;
+                min-height: 380px;
+            }
+
+            .class-thumbnail {
+                height: 140px;
+            }
+
+            .container {
+                padding: 0.5rem;
             }
         }
     </style>
