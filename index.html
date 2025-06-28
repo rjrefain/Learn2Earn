@@ -13,13 +13,13 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: white;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: #333;
             overflow-x: hidden;
         }
 
@@ -34,13 +34,23 @@
             font-size: 4rem;
             font-weight: bold;
             margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #fff, #e3f2fd);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: glow 2s ease-in-out infinite alternate;
             letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
         }
 
         .channel-button {
@@ -87,19 +97,68 @@
             transform: translateY(-1px);
         }
 
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            font-weight: 300;
+            line-height: 1.6;
+            animation: fadeIn 1.5s ease-out;
+            color: #666;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(30, 60, 114, 0.08);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .circle1 {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .circle2 {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .circle3 {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
         /* Course Section Styles */
         .course-section {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(30, 60, 114, 0.05);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 3rem 2rem;
             margin-top: 4rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(30, 60, 114, 0.1);
             animation: slideInUp 1s ease-out 0.5s both;
         }
 
         .course-container {
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
@@ -115,36 +174,71 @@
             text-shadow: none;
         }
 
+        .classes-grid {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scroll-behavior: smooth;
+        }
+
+        .classes-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .classes-grid::-webkit-scrollbar-track {
+            background: rgba(30, 60, 114, 0.1);
+            border-radius: 10px;
+        }
+
+        .classes-grid::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #00ff88, #00ffcc);
+            border-radius: 10px;
+        }
+
+        .classes-grid::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #00ffcc, #00ff88);
+        }
+
         .class-card {
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: 15px;
+            background: rgba(30, 60, 114, 0.08);
+            border-radius: 20px;
             padding: 0;
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            border: 2px solid rgba(30, 60, 114, 0.15);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(30, 60, 114, 0.15);
+            width: 300px;
+            height: 450px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .class-card:hover {
+            transform: translateY(-8px);
+            background: rgba(30, 60, 114, 0.12);
+            box-shadow: 0 20px 50px rgba(30, 60, 114, 0.25);
+            border-color: rgba(30, 60, 114, 0.3);
         }
 
         .class-thumbnail {
             width: 100%;
-            height: auto;
-            max-height: 250px;
-            object-fit: contain;
-            border-radius: 15px 15px 0 0;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1rem;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+            flex-shrink: 0;
         }
 
         .class-content {
-            padding: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .class-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.18);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            border-top: 1px solid rgba(30, 60, 114, 0.1);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .class-header {
@@ -156,9 +250,9 @@
         }
 
         .class-title {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            color: #fff;
+            color: #1e3c72;
             margin: 0;
         }
 
@@ -175,24 +269,27 @@
         }
 
         .class-description {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            color: #666;
             margin-bottom: 1.5rem;
-            line-height: 1.5;
-            font-weight: bold;
+            line-height: 1.4;
+            font-weight: 500;
+            height: 60px;
+            overflow: hidden;
+            flex: 1;
         }
 
         .class-button {
             display: inline-block;
-            padding: 14px 28px;
+            padding: 10px 20px;
             background: linear-gradient(45deg, #00ff88, #00ffcc);
             color: #000;
             text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
             font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.6), 0 0 40px rgba(0, 255, 136, 0.4), 0 0 60px rgba(0, 255, 136, 0.3);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.6), 0 0 30px rgba(0, 255, 136, 0.4);
             border: 2px solid #00ff88;
             cursor: pointer;
             text-transform: uppercase;
@@ -200,6 +297,8 @@
             position: relative;
             overflow: hidden;
             animation: neonBlink 1.5s infinite alternate, neonPulse 2s infinite;
+            width: 100%;
+            margin-bottom: 0.5rem;
         }
 
         .class-button:before {
@@ -230,20 +329,20 @@
 
         .class-buttons {
             display: flex;
-            gap: 1rem;
+            flex-direction: column;
+            gap: 0.5rem;
             justify-content: center;
-            flex-wrap: wrap;
             align-items: center;
         }
 
         .resource-button {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 8px 16px;
             background: linear-gradient(45deg, #ff6b6b, #ee5a52);
             color: white;
             text-decoration: none;
-            border-radius: 25px;
-            font-size: 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
@@ -253,6 +352,7 @@
             letter-spacing: 1px;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .resource-button:hover {
@@ -263,182 +363,6 @@
 
         .resource-button:active {
             transform: translateY(0);
-        }
-
-        /* Website Promotion Section */
-        .website-promotion {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 140, 0, 0.15));
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            padding: 3rem 2rem;
-            margin-top: 3rem;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            animation: slideInUp 1s ease-out 1s both;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .promotion-container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-        }
-
-        .bangla-text {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .decorative-line {
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #ffd700, #ff8c00, #ffd700, transparent);
-            margin: 1rem auto;
-            width: 60%;
-            border-radius: 2px;
-            animation: shimmer 2s infinite;
-        }
-
-        .bangla-title {
-            font-size: 2.2rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ffd700, #ff8c00, #ffd700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 1rem 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: textGlow 2s ease-in-out infinite alternate;
-        }
-
-        .bangla-description {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-
-        .website-button {
-            display: inline-block;
-            padding: 18px 40px;
-            background: linear-gradient(45deg, #ffd700, #ff8c00);
-            color: #000;
-            text-decoration: none;
-            border-radius: 35px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.4);
-            border: 3px solid #ffd700;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-            animation: goldenPulse 2s infinite;
-        }
-
-        .website-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 35px rgba(255, 215, 0, 0.8), 0 0 70px rgba(255, 215, 0, 0.6);
-            background: linear-gradient(45deg, #ff8c00, #ffd700);
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
-        }
-
-        .decorative-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .star {
-            position: absolute;
-            font-size: 1.5rem;
-            animation: float 3s ease-in-out infinite;
-            opacity: 0.8;
-        }
-
-        .star:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .star:nth-child(2) {
-            top: 20%;
-            right: 15%;
-            animation-delay: 0.5s;
-        }
-
-        .star:nth-child(3) {
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 1s;
-        }
-
-        .star:nth-child(4) {
-            bottom: 30%;
-            right: 10%;
-            animation-delay: 1.5s;
-        }
-
-        .star:nth-child(5) {
-            top: 50%;
-            left: 5%;
-            animation-delay: 2s;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-            font-weight: 300;
-            line-height: 1.6;
-            animation: fadeIn 1.5s ease-out;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .floating-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .circle1 {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .circle2 {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .circle3 {
-            width: 60px;
-            height: 60px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
         }
 
         @keyframes fadeInUp {
@@ -463,10 +387,10 @@
 
         @keyframes glow {
             from {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             }
             to {
-                text-shadow: 2px 2px 20px rgba(255,255,255,0.4);
+                text-shadow: 2px 2px 20px rgba(30, 60, 114, 0.3);
             }
         }
 
@@ -501,11 +425,11 @@
 
         @keyframes neonBlink {
             0% {
-                box-shadow: 0 0 20px rgba(0, 255, 136, 0.6), 0 0 40px rgba(0, 255, 136, 0.4), 0 0 60px rgba(0, 255, 136, 0.3);
+                box-shadow: 0 0 15px rgba(0, 255, 136, 0.6), 0 0 30px rgba(0, 255, 136, 0.4);
                 border-color: #00ff88;
             }
             100% {
-                box-shadow: 0 0 30px rgba(0, 255, 136, 0.9), 0 0 60px rgba(0, 255, 136, 0.7), 0 0 90px rgba(0, 255, 136, 0.5);
+                box-shadow: 0 0 25px rgba(0, 255, 136, 0.9), 0 0 50px rgba(0, 255, 136, 0.7);
                 border-color: #00ffcc;
             }
         }
@@ -519,33 +443,6 @@
             }
             100% {
                 background: linear-gradient(45deg, #00ff88, #00ffcc);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-            100% {
-                background-position: 200% 0;
-            }
-        }
-
-        @keyframes textGlow {
-            from {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            }
-            to {
-                text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.6);
-            }
-        }
-
-        @keyframes goldenPulse {
-            0%, 100% {
-                box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 35px rgba(255, 215, 0, 0.8), 0 0 70px rgba(255, 215, 0, 0.6);
             }
         }
 
@@ -577,50 +474,29 @@
                 font-size: 2rem;
             }
 
+            .classes-grid {
+                flex-direction: row;
+                overflow-x: auto;
+                gap: 1.5rem;
+            }
+
             .class-card {
-                padding: 1.5rem;
+                width: 280px;
+                height: 420px;
             }
 
-            .class-title {
-                font-size: 1.5rem;
-            }
-
-            .class-button {
-                padding: 12px 24px;
-                font-size: 1rem;
+            .logo {
+                width: 60px;
+                height: 60px;
             }
 
             .class-buttons {
                 flex-direction: column;
-                gap: 0.8rem;
+                gap: 0.5rem;
             }
 
-            .resource-button {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-
-            .website-promotion {
-                margin-top: 2rem;
-                padding: 2rem 1rem;
-            }
-
-            .bangla-title {
-                font-size: 1.8rem;
-            }
-
-            .bangla-description {
-                font-size: 1.1rem;
-            }
-
-            .website-button {
-                padding: 16px 32px;
-                font-size: 1.1rem;
-            }
-
-            .classes-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+            .class-button, .resource-button {
+                width: 100%;
             }
         }
     </style>
@@ -633,7 +509,12 @@
     </div>
 
     <div class="container">
-        <h1 class="main-heading">Learn2Earn</h1>
+        <h1 class="main-heading">
+            <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Learn%20to%20Earn.jpg" 
+                 alt="Learn2Earn Logo" 
+                 class="logo">
+            Learn2Earn
+        </h1>
         
         <p class="subtitle">
             Transform your knowledge into opportunity. Start your learning journey today and unlock your earning potential.
@@ -652,87 +533,89 @@
         <div class="course-container">
             <h2 class="course-title">Adobe Premiere Pro Zero to Hero Course</h2>
             
-            <div class="class-card">
-                <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Adobe%20Premiere%20pro%20Crack%20full%20installation%20thumbnail.png" 
-                     alt="How to install Adobe Premiere Pro 2025 Step by Step" 
-                     class="class-thumbnail">
-                <div class="class-content">
-                    <div class="class-header">
-                        <h3 class="class-title">Class 1</h3>
-                        <div class="class-badge">New</div>
-                    </div>
-                    <p class="class-description">How to install Adobe Premiere Pro 2025 Step by Step</p>
-                    <a href="https://drive.google.com/file/d/1aTDsHuA_R1uoloeMEUkGKB5nIOVl6gO6/view?usp=drive_link" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="class-button">
-                        Enter Class 1
-                    </a>
-                </div>
-            </div>
-
-            <div class="class-card">
-                <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Basic%20Of%20Adobe%20Premiere%20pro%202025.png" 
-                     alt="Basic Of Adobe Premiere pro 2025" 
-                     class="class-thumbnail">
-                <div class="class-content">
-                    <div class="class-header">
-                        <h3 class="class-title">Class 2</h3>
-                        <div class="class-badge">New</div>
-                    </div>
-                    <p class="class-description">Basic Of Adobe Premiere pro 2025</p>
-                    <div class="class-buttons">
-                        <a href="https://youtu.be/x1se6bRKKbw" 
+            <div class="classes-grid">
+                <div class="class-card">
+                    <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Adobe%20Premiere%20pro%20Crack%20full%20installation%20thumbnail.png" 
+                         alt="How to install Adobe Premiere Pro 2025 Step by Step" 
+                         class="class-thumbnail">
+                    <div class="class-content">
+                        <div class="class-header">
+                            <h3 class="class-title">Class 1</h3>
+                            <div class="class-badge">New</div>
+                        </div>
+                        <p class="class-description">How to install Adobe Premiere Pro 2025 Step by Step</p>
+                        <a href="https://drive.google.com/file/d/1aTDsHuA_R1uoloeMEUkGKB5nIOVl6gO6/view?usp=drive_link" 
                            target="_blank" 
                            rel="noopener noreferrer"
                            class="class-button">
-                            Enter Class 2
+                            Enter Class 1
                         </a>
-                        <a href="https://drive.google.com/drive/folders/1AfcObC5acqmw2_EXX1_b4TrnCOl0IgV5?usp=sharing" 
+                    </div>
+                </div>
+
+                <div class="class-card">
+                    <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Basic%20Of%20Adobe%20Premiere%20pro%202025.png" 
+                         alt="Basic Of Adobe Premiere pro 2025" 
+                         class="class-thumbnail">
+                    <div class="class-content">
+                        <div class="class-header">
+                            <h3 class="class-title">Class 2</h3>
+                            <div class="class-badge">New</div>
+                        </div>
+                        <p class="class-description">Basic Of Adobe Premiere pro 2025</p>
+                        <div class="class-buttons">
+                            <a href="https://youtu.be/x1se6bRKKbw" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="class-button">
+                                Enter Class 2
+                            </a>
+                            <a href="https://drive.google.com/drive/folders/1AfcObC5acqmw2_EXX1_b4TrnCOl0IgV5?usp=sharing" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="resource-button">
+                                📁 Resources
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="class-card">
+                    <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/How%20to%20make%20Auto%20Caption%20in%20Adobe%20Premire%20Pro%202025.jpg" 
+                         alt="How To use Auto Caption in Adobe Premiere pro 2025" 
+                         class="class-thumbnail">
+                    <div class="class-content">
+                        <div class="class-header">
+                            <h3 class="class-title">Class 3</h3>
+                            <div class="class-badge">New</div>
+                        </div>
+                        <p class="class-description">How To use Auto Caption in Adobe Premiere pro 2025</p>
+                        <a href="https://www.youtube.com/watch?v=-tmdXFm6FJE" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           class="resource-button">
-                            📁 Resources
+                           class="class-button">
+                            Enter Class 3
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <div class="class-card">
-                <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/How%20to%20make%20Auto%20Caption%20in%20Adobe%20Premire%20Pro%202025.jpg" 
-                     alt="How To use Auto Caption in Adobe Premiere pro 2025" 
-                     class="class-thumbnail">
-                <div class="class-content">
-                    <div class="class-header">
-                        <h3 class="class-title">Class 3</h3>
-                        <div class="class-badge">New</div>
+                <div class="class-card">
+                    <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/How%20To%20Export%20videos%20in%20Premiere%20Pro%202025.jpg" 
+                         alt="How to export a video in Premiere Pro 2025" 
+                         class="class-thumbnail">
+                    <div class="class-content">
+                        <div class="class-header">
+                            <h3 class="class-title">Class 4</h3>
+                            <div class="class-badge">New</div>
+                        </div>
+                        <p class="class-description">How to export a video in Premiere Pro 2025</p>
+                        <a href="https://youtu.be/4-an7hKybxs" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="class-button">
+                            Enter Class 4
+                        </a>
                     </div>
-                    <p class="class-description">How To use Auto Caption in Adobe Premiere pro 2025</p>
-                    <a href="https://www.youtube.com/watch?v=-tmdXFm6FJE" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="class-button">
-                        Enter Class 3
-                    </a>
-                </div>
-            </div>
-
-            <div class="class-card">
-                <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/How%20To%20Export%20videos%20in%20Premiere%20Pro%202025.jpg" 
-                     alt="How to export a video in Premiere Pro 2025" 
-                     class="class-thumbnail">
-                <div class="class-content">
-                    <div class="class-header">
-                        <h3 class="class-title">Class 4</h3>
-                        <div class="class-badge">New</div>
-                    </div>
-                    <p class="class-description">How to export a video in Premiere Pro 2025</p>
-                    <a href="https://youtu.be/4-an7hKybxs" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="class-button">
-                        Enter Class 4
-                    </a>
                 </div>
             </div>
         </div>
