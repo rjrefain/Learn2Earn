@@ -164,14 +164,43 @@
         }
 
         .course-title {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #1e3c72, #2a5298, #4facfe);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: none;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            padding: 1rem 0;
+            animation: heroGlow 2s ease-in-out infinite alternate;
+        }
+
+        .course-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #4facfe, #00f2fe, #4facfe, transparent);
+            border-radius: 2px;
+            animation: shimmer 2s infinite;
+        }
+
+        .course-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #4facfe, #00f2fe, #4facfe, transparent);
+            border-radius: 2px;
+            animation: shimmer 2s infinite reverse;
         }
 
         .classes-grid {
@@ -361,8 +390,98 @@
             background: linear-gradient(45deg, #ee5a52, #ff6b6b);
         }
 
-        .resource-button:active {
-            transform: translateY(0);
+        /* Donation Section */
+        .donation-section {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1));
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            text-align: center;
+            animation: slideInUp 1s ease-out 1.5s both;
+        }
+
+        .donation-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .donation-description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .donation-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            color: #000;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+            border: 2px solid #ffd700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .donation-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(45deg, #ff8c00, #ffd700);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #4facfe;
+        }
+
+        .footer-email {
+            font-size: 1.2rem;
+            color: #00ff88;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .footer-mission {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
 
         @keyframes fadeInUp {
@@ -443,6 +562,24 @@
             }
             100% {
                 background: linear-gradient(45deg, #00ff88, #00ffcc);
+            }
+        }
+
+        @keyframes heroGlow {
+            from {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            }
+            to {
+                text-shadow: 2px 2px 20px rgba(79, 172, 254, 0.4);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
             }
         }
 
@@ -564,17 +701,17 @@
                         </div>
                         <p class="class-description">Basic Of Adobe Premiere pro 2025</p>
                         <div class="class-buttons">
-                            <a href="https://youtu.be/x1se6bRKKbw" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="class-button">
-                                Enter Class 2
-                            </a>
                             <a href="https://drive.google.com/drive/folders/1AfcObC5acqmw2_EXX1_b4TrnCOl0IgV5?usp=sharing" 
                                target="_blank" 
                                rel="noopener noreferrer"
                                class="resource-button">
                                 📁 Resources
+                            </a>
+                            <a href="https://youtu.be/x1se6bRKKbw" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="class-button">
+                                Enter Class 2
                             </a>
                         </div>
                     </div>
@@ -620,6 +757,34 @@
             </div>
         </div>
     </div>
+
+    <!-- Donation Section -->
+    <div class="donation-section">
+        <h3 class="donation-title">Support Our Mission</h3>
+        <p class="donation-description">
+            Our Mission is to Make The Young Generation Expert in Digital Skills. Your donation can help us reach more students and create better educational content.
+        </p>
+        <a href="#" class="donation-button">
+            💖 Donate Now
+        </a>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #999;">
+            Payment details will be added soon
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h4 class="footer-title">Learn2Earn</h4>
+            <div class="footer-email">contact@learn2earnbd.com</div>
+            <p class="footer-mission">
+                Our Mission is to Make The Young Generation Expert in Digital Skills. We believe in empowering students with practical knowledge that helps them earn while they learn.
+            </p>
+            <div class="footer-bottom">
+                © 2025 Learn2Earn. All rights reserved. | Empowering Digital Skills for the Future
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Add some interactive elements
