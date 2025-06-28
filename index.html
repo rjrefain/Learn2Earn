@@ -52,6 +52,12 @@
             object-fit: contain;
         }
 
+        .banner-image {
+            max-width: 300px;
+            height: auto;
+            object-fit: contain;
+        }
+
         .channel-button {
             display: inline-block;
             padding: 18px 36px;
@@ -508,6 +514,13 @@
             animation: bounce 2s infinite 0.5s;
         }
 
+        .footer-banner {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 2rem;
+            filter: brightness(1.2);
+        }
+
         .footer-email {
             font-size: 1.4rem;
             color: #ffff00;
@@ -669,15 +682,26 @@
             }
         }
 
-        @keyframes neonPulseBlue {
+        @keyframes neonBlink {
             0% {
-                background: linear-gradient(45deg, #00bfff, #1e90ff);
-            }
-            50% {
-                background: linear-gradient(45deg, #1e90ff, #00bfff);
+                box-shadow: 0 0 15px rgba(0, 255, 136, 0.6), 0 0 30px rgba(0, 255, 136, 0.4);
+                border-color: #00ff88;
             }
             100% {
-                background: linear-gradient(45deg, #00bfff, #1e90ff);
+                box-shadow: 0 0 25px rgba(0, 255, 136, 0.9), 0 0 50px rgba(0, 255, 136, 0.7);
+                border-color: #00ffcc;
+            }
+        }
+
+        @keyframes neonPulse {
+            0% {
+                background: linear-gradient(45deg, #00ff88, #00ffcc);
+            }
+            50% {
+                background: linear-gradient(45deg, #00ffcc, #00ff88);
+            }
+            100% {
+                background: linear-gradient(45deg, #00ff88, #00ffcc);
             }
         }
 
@@ -687,29 +711,6 @@
             }
             to {
                 text-shadow: 2px 2px 20px rgba(255, 255, 0, 0.6);
-            }
-        }
-
-        @keyframes neonBlinkBlue {
-            0% {
-                box-shadow: 0 0 15px rgba(0, 191, 255, 0.6), 0 0 30px rgba(0, 191, 255, 0.4);
-                border-color: #00bfff;
-            }
-            100% {
-                box-shadow: 0 0 25px rgba(0, 191, 255, 0.9), 0 0 50px rgba(0, 191, 255, 0.7);
-                border-color: #1e90ff;
-            }
-        }
-
-        @keyframes neonPulseBlue {
-            0% {
-                background: linear-gradient(45deg, #00bfff, #1e90ff);
-            }
-            50% {
-                background: linear-gradient(45deg, #1e90ff, #00bfff);
-            }
-            100% {
-                background: linear-gradient(45deg, #00bfff, #1e90ff);
             }
         }
 
@@ -788,6 +789,11 @@
             .main-heading {
                 font-size: 2rem;
                 gap: 0.5rem;
+                flex-direction: column;
+            }
+            
+            .banner-image {
+                max-width: 250px;
             }
             
             .channel-button {
@@ -897,6 +903,10 @@
                 display: none;
             }
 
+            .footer-banner {
+                max-width: 200px;
+            }
+
             .footer-email {
                 font-size: 1.1rem;
                 padding: 12px 24px;
@@ -922,6 +932,10 @@
                 font-size: 1.8rem;
             }
 
+            .banner-image {
+                max-width: 200px;
+            }
+
             .course-title {
                 font-size: 1.5rem;
             }
@@ -932,6 +946,10 @@
 
             .footer-title {
                 font-size: 1.8rem;
+            }
+
+            .footer-banner {
+                max-width: 180px;
             }
 
             .class-card {
@@ -958,10 +976,12 @@
 
     <div class="container">
         <h1 class="main-heading">
-            <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Learn%20to%20Earn.jpg" 
+            <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" 
                  alt="Learn2Earn Logo" 
                  class="logo">
-            Learn2Earn
+            <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Learn_2_Earn_Banner-removebg-preview (1).png" 
+                 alt="Learn2Earn Banner" 
+                 class="banner-image">
         </h1>
         
         <p class="subtitle">
@@ -1095,7 +1115,9 @@
         </div>
         
         <div class="footer-content">
-            <h4 class="footer-title">Learn2Earn</h4>
+            <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Learn_2_Earn_Banner-removebg-preview (1).png" 
+                 alt="Learn2Earn Banner" 
+                 class="footer-banner">
             <div class="footer-email">contact@learn2earnbd.com</div>
             <p class="footer-mission">
                 আমাদের লক্ষ্য হলো তরুণ প্রজন্মকে ডিজিটাল দক্ষতায় পারদর্শী করে তোলা। আমরা বিশ্বাস করি শিক্ষার্থীদের ব্যবহারিক জ্ঞান দিয়ে ক্ষমতায়ন করতে যা তাদের শেখার সাথে সাথে উপার্জন করতে সাহায্য করে।
