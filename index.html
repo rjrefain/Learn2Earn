@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,1440 +6,204 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <title>Learn2Earn</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
+        /* === GLOBAL STYLES === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Arial', sans-serif; 
             background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             color: #1565c0;
-            overflow-x: hidden;
+            min-height: 100vh;
         }
-
-        .container {
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 2rem 1rem; 
             text-align: center;
-            max-width: 800px;
-            padding: 1rem;
-            animation: fadeInUp 1s ease-out;
         }
 
+        /* === HEADER === */
         .main-heading {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            background: linear-gradient(45deg, #1e88e5, #42a5f5, #64b5f6);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #1e88e5, #42a5f5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: glow 2s ease-in-out infinite alternate;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
         }
-
-        .logo {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-        }
-
         .banner-image {
             max-width: 300px;
-            height: auto;
-            object-fit: contain;
+            margin: 1rem 0;
         }
-
         .channel-button {
             display: inline-block;
-            padding: 18px 36px;
+            padding: 15px 30px;
             background: linear-gradient(45deg, #1e88e5, #42a5f5);
             color: white;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(30, 136, 229, 0.3);
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
+            font-weight: bold;
+            margin: 1rem 0;
+            transition: transform 0.3s;
         }
-
-        .channel-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .channel-button:hover:before {
-            left: 100%;
-        }
-
         .channel-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(30, 136, 229, 0.4);
-            background: linear-gradient(45deg, #1565c0, #1e88e5);
         }
 
-        .channel-button:active {
-            transform: translateY(-1px);
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            opacity: 0.8;
-            font-weight: 300;
-            line-height: 1.6;
-            animation: fadeIn 1.5s ease-out;
-            color: #1565c0;
-        }
-
-        .floating-elements {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-            top: 0;
-            left: 0;
-        }
-
-        .floating-logo {
-            position: absolute;
-            opacity: 0.25;
-            animation: floatMove 15s linear infinite;
-            pointer-events: none;
-        }
-
-        .floating-logo:nth-child(1) {
-            width: 40px;
-            height: 40px;
-            top: 10%;
-            left: 5%;
-            animation: floatMove1 12s linear infinite;
-        }
-
-        .floating-logo:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 20%;
-            right: 10%;
-            animation: floatMove2 18s linear infinite;
-        }
-
-        .floating-logo:nth-child(3) {
-            width: 35px;
-            height: 35px;
-            top: 30%;
-            left: 15%;
-            animation: floatMove3 14s linear infinite;
-        }
-
-        .floating-logo:nth-child(4) {
-            width: 50px;
-            height: 50px;
-            top: 40%;
-            right: 20%;
-            animation: floatMove4 16s linear infinite;
-        }
-
-        .floating-logo:nth-child(5) {
-            width: 45px;
-            height: 45px;
-            top: 50%;
-            left: 8%;
-            animation: floatMove5 13s linear infinite;
-        }
-
-        .floating-logo:nth-child(6) {
-            width: 55px;
-            height: 55px;
-            top: 60%;
-            right: 12%;
-            animation: floatMove6 17s linear infinite;
-        }
-
-        .floating-logo:nth-child(7) {
-            width: 38px;
-            height: 38px;
-            top: 70%;
-            left: 25%;
-            animation: floatMove7 15s linear infinite;
-        }
-
-        .floating-logo:nth-child(8) {
-            width: 42px;
-            height: 42px;
-            top: 80%;
-            right: 18%;
-            animation: floatMove8 11s linear infinite;
-        }
-
-        .floating-logo:nth-child(9) {
-            width: 48px;
-            height: 48px;
-            top: 15%;
-            left: 35%;
-            animation: floatMove9 19s linear infinite;
-        }
-
-        .floating-logo:nth-child(10) {
-            width: 52px;
-            height: 52px;
-            top: 25%;
-            right: 30%;
-            animation: floatMove10 14s linear infinite;
-        }
-
-        .floating-logo:nth-child(11) {
-            width: 36px;
-            height: 36px;
-            top: 35%;
-            left: 45%;
-            animation: floatMove11 16s linear infinite;
-        }
-
-        .floating-logo:nth-child(12) {
-            width: 44px;
-            height: 44px;
-            top: 45%;
-            right: 35%;
-            animation: floatMove12 12s linear infinite;
-        }
-
-        .floating-logo:nth-child(13) {
-            width: 40px;
-            height: 40px;
-            top: 55%;
-            left: 55%;
-            animation: floatMove13 18s linear infinite;
-        }
-
-        .floating-logo:nth-child(14) {
-            width: 58px;
-            height: 58px;
-            top: 65%;
-            right: 25%;
-            animation: floatMove14 13s linear infinite;
-        }
-
-        .floating-logo:nth-child(15) {
-            width: 46px;
-            height: 46px;
-            top: 75%;
-            left: 40%;
-            animation: floatMove15 17s linear infinite;
-        }
-
-        .floating-logo:nth-child(16) {
-            width: 54px;
-            height: 54px;
-            top: 85%;
-            right: 40%;
-            animation: floatMove16 15s linear infinite;
-        }
-
-        .floating-logo:nth-child(17) {
-            width: 41px;
-            height: 41px;
-            top: 12%;
-            left: 65%;
-            animation: floatMove17 14s linear infinite;
-        }
-
-        .floating-logo:nth-child(18) {
-            width: 47px;
-            height: 47px;
-            top: 32%;
-            right: 45%;
-            animation: floatMove18 16s linear infinite;
-        }
-
-        .floating-logo:nth-child(19) {
-            width: 43px;
-            height: 43px;
-            top: 52%;
-            left: 75%;
-            animation: floatMove19 11s linear infinite;
-        }
-
-        .floating-logo:nth-child(20) {
-            width: 49px;
-            height: 49px;
-            top: 72%;
-            right: 15%;
-            animation: floatMove20 19s linear infinite;
-        }
-
-        /* Course Section Styles */
+        /* === COURSE SECTIONS === */
         .course-section {
-            background: linear-gradient(135deg, rgba(30, 136, 229, 0.08), rgba(66, 165, 245, 0.05));
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
-            padding: 3rem 2rem;
-            margin-top: 1rem;
-            border: 2px solid rgba(30, 136, 229, 0.15);
-            animation: slideInUp 1s ease-out 0.5s both;
-            box-shadow: 0 10px 40px rgba(30, 136, 229, 0.1);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
-        .course-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
         .course-title {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 3rem;
-            background: linear-gradient(45deg, #ffd700, #ffb300, #ff8f00);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #ffd700, #ffb300);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.2);
-            position: relative;
-            padding: 1rem 0;
-            animation: heroGlow 2s ease-in-out infinite alternate;
         }
-
-        .course-title::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #ffd700, #ffb300, #ffd700, transparent);
-            border-radius: 2px;
-            animation: shimmer 2s infinite;
-        }
-
-        .course-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #ffd700, #ffb300, #ffd700, transparent);
-            border-radius: 2px;
-            animation: shimmer 2s infinite reverse;
-        }
-
         .classes-grid {
             display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
             overflow-x: auto;
-            padding-bottom: 1rem;
-            scroll-behavior: smooth;
+            padding: 1rem;
+            scrollbar-width: thin;
         }
-
-        .classes-grid::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .classes-grid::-webkit-scrollbar-track {
-            background: rgba(30, 136, 229, 0.1);
-            border-radius: 10px;
-        }
-
-        .classes-grid::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, #00bfff, #1e90ff);
-            border-radius: 10px;
-        }
-
-        .classes-grid::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, #1e90ff, #00bfff);
-        }
-
         .class-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(227, 242, 253, 0.8));
-            border-radius: 20px;
-            padding: 0;
-            border: 2px solid rgba(30, 136, 229, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(30, 136, 229, 0.15);
-            width: 300px;
-            height: 450px;
+            background: white;
+            border-radius: 15px;
+            width: 280px;
             flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
-
         .class-card:hover {
-            transform: translateY(-8px);
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(227, 242, 253, 0.9));
-            box-shadow: 0 20px 50px rgba(30, 136, 229, 0.25);
-            border-color: rgba(255, 215, 0, 0.4);
+            transform: translateY(-5px);
         }
-
         .class-thumbnail {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 20px 20px 0 0;
-            flex-shrink: 0;
+            height: 160px;
+            background: #001d38;
+            display: grid;
+            place-items: center;
+            border-radius: 15px 15px 0 0;
         }
-
+        .class-thumbnail img {
+            width: 80px;
+            filter: drop-shadow(0 0 10px rgba(0,150,255,0.7));
+        }
         .class-content {
-            padding: 1.5rem;
-            border-top: 1px solid rgba(30, 136, 229, 0.1);
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            padding: 1.2rem;
         }
-
-        .class-header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
         .class-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #1565c0;
-            margin: 0;
-        }
-
-        .class-badge {
-            background: linear-gradient(45deg, #ffff00, #ffeb3b);
-            color: #1565c0;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            animation: pulse 2s infinite;
-            box-shadow: 0 2px 8px rgba(255, 255, 0, 0.3);
-        }
-
-        .class-description {
-            font-size: 1rem;
-            color: #1565c0;
-            margin-bottom: 1.5rem;
-            line-height: 1.4;
-            font-weight: 500;
-            height: 60px;
-            overflow: hidden;
-            flex: 1;
-            opacity: 0.8;
-        }
-
-        .class-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(45deg, #00ff88, #00ffcc);
-            color: #000;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.6), 0 0 30px rgba(0, 255, 136, 0.4);
-            border: 2px solid #00ff88;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-            animation: neonBlink 1.5s infinite alternate, neonPulse 2s infinite;
-            width: 100%;
-            margin-bottom: 0.5rem;
-        }
-
-        .class-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s;
-        }
-
-        .class-button:hover:before {
-            left: 100%;
-        }
-
-        .class-button:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 0 30px rgba(76, 175, 80, 0.8), 0 0 60px rgba(76, 175, 80, 0.6), 0 0 90px rgba(76, 175, 80, 0.4);
-            background: linear-gradient(45deg, #66bb6a, #4caf50);
-            text-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
-        }
-
-        .class-button:active {
-            transform: translateY(0) scale(1);
-        }
-
-        .class-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .resource-button {
-            display: inline-block;
-            padding: 8px 16px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-            color: white;
-            text-decoration: none;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-            border: 2px solid #ff6b6b;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .resource-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
-            background: linear-gradient(45deg, #ee5a52, #ff6b6b);
-        }
-
-        /* Donation Section */
-        .donation-section {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1));
-            border-radius: 20px;
-            padding: 1.5rem 1rem;
-            margin-top: 1rem;
-            border: 2px solid rgba(255, 215, 0, 0.2);
-            text-align: center;
-            animation: slideInUp 1s ease-out 1.5s both;
-        }
-
-        .donation-title {
-            font-size: 2.2rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ffff00, #ffeb3b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-            -webkit-text-stroke: 2px #333;
-            text-stroke: 2px #333;
-        }
-
-        .donation-description {
             font-size: 1.2rem;
-            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .class-description {
+            color: #555;
             margin-bottom: 1rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        .class-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #00c853;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .class-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
         }
 
+        /* === DONATION SECTION === */
+        .donation-section {
+            background: #fff8e1;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        .donation-title {
+            color: #ff6d00;
+            margin-bottom: 1rem;
+        }
         .donation-button {
             display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(45deg, #ffff00, #ffeb3b);
-            color: #000;
-            text-decoration: none;
+            padding: 12px 24px;
+            background: #ff9100;
+            color: white;
+            border: none;
             border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(255, 255, 0, 0.3);
-            border: 2px solid #ffff00;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: bold;
+            margin-top: 1rem;
         }
 
-        .donation-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 255, 0, 0.4);
-            background: linear-gradient(45deg, #ffeb3b, #ffff00);
-        }
-
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #4caf50, #66bb6a, #388e3c);
-            color: #ffd700;
-            padding: 4rem 2rem 2rem;
-            margin-top: 4rem;
+        /* === FOOTER === */
+        footer {
+            background: #1565c0;
+            color: white;
             text-align: center;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
+            padding: 2rem;
+            margin-top: 3rem;
         }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #ffff00, #ffeb3b, #fff176, #ffee58, #ffff00);
-            animation: colorWave 3s linear infinite;
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-title {
-            display: none;
-        }
-
-        .footer-title::before {
-            display: none;
-        }
-
-        .footer-title::after {
-            display: none;
-        }
-
-        .footer-banner {
-            max-width: 250px;
-            height: auto;
-            margin-bottom: 2rem;
-            filter: brightness(1.2);
-        }
-
         .footer-email {
-            font-size: 1.4rem;
-            color: #ffff00;
-            margin-bottom: 2rem;
-            font-weight: 600;
-            position: relative;
-            padding: 15px 30px;
-            background: rgba(255, 255, 0, 0.1);
-            border-radius: 50px;
-            border: 2px solid #ffff00;
-            display: inline-block;
-            transition: all 0.3s ease;
-            animation: emailPulse 3s ease-in-out infinite;
+            color: #ffd600;
+            font-weight: bold;
+            margin: 1rem 0;
         }
 
-        .footer-email:hover {
-            transform: scale(1.05);
-            background: rgba(255, 255, 0, 0.2);
-            box-shadow: 0 0 20px rgba(255, 255, 0, 0.4);
-        }
-
-        .footer-email::before {
-            content: '✉️';
-            margin-right: 10px;
-            font-size: 1.2rem;
-            animation: wiggle 2s ease-in-out infinite;
-        }
-
-        .footer-mission {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: #fff59d;
-            position: relative;
-            padding: 20px;
-            background: rgba(255, 255, 0, 0.1);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 0, 0.3);
-            font-weight: 500;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 0, 0.3);
-            padding-top: 1.5rem;
-            font-size: 0.9rem;
-            color: #fff59d;
-            position: relative;
-        }
-
-        .footer-decorative-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .footer-star {
-            position: absolute;
-            color: #ffff00;
-            font-size: 1.5rem;
-            animation: twinkle 2s ease-in-out infinite;
-            opacity: 0.8;
-        }
-
-        .footer-star:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .footer-star:nth-child(2) {
-            top: 30%;
-            right: 15%;
-            animation-delay: 0.7s;
-        }
-
-        .footer-star:nth-child(3) {
-            bottom: 30%;
-            left: 20%;
-            animation-delay: 1.4s;
-        }
-
-        .footer-star:nth-child(4) {
-            bottom: 20%;
-            right: 10%;
-            animation-delay: 2.1s;
-        }
-
-        .footer-star:nth-child(5) {
-            top: 50%;
-            left: 5%;
-            animation-delay: 2.8s;
-        }
-
-        .footer-star:nth-child(6) {
-            top: 60%;
-            right: 8%;
-            animation-delay: 3.5s;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            }
-            to {
-                text-shadow: 2px 2px 20px rgba(30, 136, 229, 0.4);
-            }
-        }
-
-        @keyframes floatMove1 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(100px, -50px) rotate(90deg); }
-            50% { transform: translate(-50px, 100px) rotate(180deg); }
-            75% { transform: translate(-100px, -100px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove2 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-120px, 80px) rotate(90deg); }
-            50% { transform: translate(80px, -120px) rotate(180deg); }
-            75% { transform: translate(120px, 120px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove3 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(80px, 120px) rotate(90deg); }
-            50% { transform: translate(-120px, -80px) rotate(180deg); }
-            75% { transform: translate(-80px, 80px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove4 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-90px, -110px) rotate(90deg); }
-            50% { transform: translate(110px, 90px) rotate(180deg); }
-            75% { transform: translate(90px, -90px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove5 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(70px, -90px) rotate(90deg); }
-            50% { transform: translate(-90px, 70px) rotate(180deg); }
-            75% { transform: translate(-70px, -70px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove6 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-110px, 70px) rotate(90deg); }
-            50% { transform: translate(70px, -110px) rotate(180deg); }
-            75% { transform: translate(110px, 110px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove7 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(60px, 100px) rotate(90deg); }
-            50% { transform: translate(-100px, -60px) rotate(180deg); }
-            75% { transform: translate(-60px, 60px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove8 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-80px, -80px) rotate(90deg); }
-            50% { transform: translate(80px, 80px) rotate(180deg); }
-            75% { transform: translate(80px, -80px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove9 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(130px, -70px) rotate(90deg); }
-            50% { transform: translate(-70px, 130px) rotate(180deg); }
-            75% { transform: translate(-130px, -130px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove10 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-100px, 90px) rotate(90deg); }
-            50% { transform: translate(90px, -100px) rotate(180deg); }
-            75% { transform: translate(100px, 100px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove11 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(75px, 115px) rotate(90deg); }
-            50% { transform: translate(-115px, -75px) rotate(180deg); }
-            75% { transform: translate(-75px, 75px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove12 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-95px, -95px) rotate(90deg); }
-            50% { transform: translate(95px, 95px) rotate(180deg); }
-            75% { transform: translate(95px, -95px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove13 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(85px, -105px) rotate(90deg); }
-            50% { transform: translate(-105px, 85px) rotate(180deg); }
-            75% { transform: translate(-85px, -85px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove14 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-125px, 65px) rotate(90deg); }
-            50% { transform: translate(65px, -125px) rotate(180deg); }
-            75% { transform: translate(125px, 125px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove15 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(55px, 95px) rotate(90deg); }
-            50% { transform: translate(-95px, -55px) rotate(180deg); }
-            75% { transform: translate(-55px, 55px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove16 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-75px, -115px) rotate(90deg); }
-            50% { transform: translate(115px, 75px) rotate(180deg); }
-            75% { transform: translate(75px, -75px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove17 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(105px, -85px) rotate(90deg); }
-            50% { transform: translate(-85px, 105px) rotate(180deg); }
-            75% { transform: translate(-105px, -105px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove18 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-65px, 125px) rotate(90deg); }
-            50% { transform: translate(125px, -65px) rotate(180deg); }
-            75% { transform: translate(65px, 65px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove19 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(45px, 135px) rotate(90deg); }
-            50% { transform: translate(-135px, -45px) rotate(180deg); }
-            75% { transform: translate(-45px, 45px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes floatMove20 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-115px, -75px) rotate(90deg); }
-            50% { transform: translate(75px, 115px) rotate(180deg); }
-            75% { transform: translate(115px, -115px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        @keyframes neonBlink {
-            0% {
-                box-shadow: 0 0 15px rgba(0, 255, 136, 0.6), 0 0 30px rgba(0, 255, 136, 0.4);
-                border-color: #00ff88;
-            }
-            100% {
-                box-shadow: 0 0 25px rgba(0, 255, 136, 0.9), 0 0 50px rgba(0, 255, 136, 0.7);
-                border-color: #00ffcc;
-            }
-        }
-
-        @keyframes neonPulse {
-            0% {
-                background: linear-gradient(45deg, #00ff88, #00ffcc);
-            }
-            50% {
-                background: linear-gradient(45deg, #00ffcc, #00ff88);
-            }
-            100% {
-                background: linear-gradient(45deg, #00ff88, #00ffcc);
-            }
-        }
-
-        @keyframes heroGlow {
-            from {
-                text-shadow: 2px 2px 4px rgba(255, 255, 0, 0.2);
-            }
-            to {
-                text-shadow: 2px 2px 20px rgba(255, 255, 0, 0.6);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-            100% {
-                background-position: 200% 0;
-            }
-        }
-
-        @keyframes colorWave {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
-        }
-
-        @keyframes titleGlow {
-            from {
-                text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-            }
-            to {
-                text-shadow: 0 0 50px rgba(255, 215, 0, 0.8), 0 0 70px rgba(255, 215, 0, 0.4);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(-50%);
-            }
-            40% {
-                transform: translateY(-70%);
-            }
-            60% {
-                transform: translateY(-60%);
-            }
-        }
-
-        @keyframes emailPulse {
-            0%, 100% {
-                box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(255, 255, 0, 0.6), 0 0 30px rgba(255, 255, 0, 0.3);
-            }
-        }
-
-        @keyframes wiggle {
-            0%, 100% {
-                transform: rotate(0deg);
-            }
-            25% {
-                transform: rotate(5deg);
-            }
-            75% {
-                transform: rotate(-5deg);
-            }
-        }
-
-        @keyframes twinkle {
-            0%, 100% {
-                opacity: 0.3;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-        }
-
+        /* === RESPONSIVE DESIGN === */
         @media (max-width: 768px) {
-            .main-heading {
-                font-size: 2rem;
-                gap: 0.5rem;
-                flex-direction: column;
-            }
-            
-            .banner-image {
-                max-width: 250px;
-            }
-            
-            .channel-button {
-                padding: 14px 28px;
-                font-size: 0.9rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-                margin-bottom: 2rem;
-                padding: 0 1rem;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-
-            .course-section {
-                margin-top: 2rem;
-                padding: 2rem 1rem;
-            }
-
-            .course-title {
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
-            }
-
-            .course-title::before,
-            .course-title::after {
-                width: 150px;
-                height: 3px;
-            }
-
-            .classes-grid {
-                flex-direction: column;
-                overflow-x: visible;
-                gap: 1.5rem;
-                align-items: center;
-            }
-
-            .class-card {
-                width: 100%;
-                max-width: 350px;
-                height: auto;
-                min-height: 400px;
-            }
-
-            .class-thumbnail {
-                height: 160px;
-            }
-
-            .class-content {
-                padding: 1.2rem;
-            }
-
-            .class-title {
-                font-size: 1.2rem;
-            }
-
-            .class-description {
-                font-size: 0.9rem;
-                height: auto;
-                min-height: 50px;
-            }
-
-            .class-button, .resource-button {
-                width: 100%;
-                padding: 12px 20px;
-                font-size: 0.85rem;
-            }
-
-            .class-buttons {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .donation-section {
-                margin-top: 2rem;
-                padding: 2rem 1rem;
-            }
-
-            .donation-title {
-                font-size: 1.8rem;
-            }
-
-            .donation-description {
-                font-size: 1rem;
-                padding: 0 0.5rem;
-            }
-
-            .donation-button {
-                padding: 12px 24px;
-                font-size: 1rem;
-            }
-
-            .footer {
-                padding: 3rem 1rem 2rem;
-            }
-
-            .footer-title {
-                font-size: 2rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .footer-title::before,
-            .footer-title::after {
-                display: none;
-            }
-
-            .footer-banner {
-                max-width: 200px;
-            }
-
-            .footer-email {
-                font-size: 1.1rem;
-                padding: 12px 24px;
-            }
-
-            .footer-mission {
-                font-size: 1rem;
-                padding: 15px;
-            }
-
-            .footer-star {
-                font-size: 1.2rem;
-            }
-
-            .logo {
-                width: 50px;
-                height: 50px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-heading {
-                font-size: 1.8rem;
-            }
-
-            .banner-image {
-                max-width: 200px;
-            }
-
-            .course-title {
-                font-size: 1.5rem;
-            }
-
-            .donation-title {
-                font-size: 1.5rem;
-            }
-
-            .footer-title {
-                font-size: 1.8rem;
-            }
-
-            .footer-banner {
-                max-width: 180px;
-            }
-
-            .class-card {
-                max-width: 300px;
-                min-height: 380px;
-            }
-
-            .class-thumbnail {
-                height: 140px;
-            }
-
-            .container {
-                padding: 0.5rem;
-            }
+            .main-heading { font-size: 2rem; }
+            .course-title { font-size: 1.5rem; }
+            .class-card { width: 240px; }
         }
     </style>
 </head>
 <body>
-    <div class="floating-elements">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-        <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Main Logo Of Learn to earn.png" class="floating-logo" alt="">
-    </div>
-
+    <!-- Header Section -->
     <div class="container">
-        <h1 class="main-heading">
-            <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Learn_2_Earn_Banner-removebg-preview (1).png" 
-                 alt="Learn2Earn Banner" 
-                 class="banner-image">
-        </h1>
-        
-        <a href="https://www.youtube.com/channel/UCZ7og0Lebx-CB2Dbcvn4ggA" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="channel-button">
-            Visit The Channel To Start Your Learning Journey
+        <h1 class="main-heading">Learn2Earn</h1>
+        <img src="images/Learn_2_Earn_Banner.png" alt="Learn2Earn Banner" class="banner-image">
+        <a href="https://www.youtube.com/channel/UCZ7og0Lebx-CB2Dbcvn4ggA" class="channel-button">
+            Visit Our YouTube Channel
         </a>
     </div>
 
-    <!-- Course Section -->
+    <!-- Premiere Pro Course Section -->
     <div class="course-section">
-        <div class="course-container">
-            <h2 class="course-title">Adobe Premiere Pro Zero to Hero Course</h2>
-            
-            <div class="classes-grid">
-                <div class="class-card">
-                    <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Adobe%20Premiere%20pro%20Crack%20full%20installation%20thumbnail.png" 
-                         alt="How to install Adobe Premiere Pro 2025 Step by Step" 
-                         class="class-thumbnail">
-                    <div class="class-content">
-                        <div class="class-header">
-                            <h3 class="class-title">Class 1</h3>
-                            <div class="class-badge">New</div>
-                        </div>
-                        <p class="class-description">How to install Adobe Premiere Pro 2025 Step by Step</p>
-                        <a href="https://drive.google.com/file/d/1aTDsHuA_R1uoloeMEUkGKB5nIOVl6gO6/view?usp=drive_link" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="class-button">
-                            Enter Class 1
-                        </a>
-                    </div>
-                </div>
-
-                <div class="class-card">
-                    <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Basic%20Of%20Adobe%20Premiere%20pro%202025.png" 
-                         alt="Basic Of Adobe Premiere pro 2025" 
-                         class="class-thumbnail">
-                    <div class="class-content">
-                        <div class="class-header">
-                            <h3 class="class-title">Class 2</h3>
-                            <div class="class-badge">New</div>
-                        </div>
-                        <p class="class-description">Basic Of Adobe Premiere pro 2025</p>
-                        <div class="class-buttons">
-                            <a href="https://drive.google.com/drive/folders/1AfcObC5acqmw2_EXX1_b4TrnCOl0IgV5?usp=sharing" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="resource-button">
-                                📁 Resources
-                            </a>
-                            <a href="https://youtu.be/x1se6bRKKbw" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="class-button">
-                                Enter Class 2
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="class-card">
-                    <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/How%20to%20make%20Auto%20Caption%20in%20Adobe%20Premire%20Pro%202025.jpg" 
-                         alt="How To use Auto Caption in Adobe Premiere pro 2025" 
-                         class="class-thumbnail">
-                    <div class="class-content">
-                        <div class="class-header">
-                            <h3 class="class-title">Class 3</h3>
-                            <div class="class-badge">New</div>
-                        </div>
-                        <p class="class-description">How To use Auto Caption in Adobe Premiere pro 2025</p>
-                        <a href="https://www.youtube.com/watch?v=-tmdXFm6FJE" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="class-button">
-                            Enter Class 3
-                        </a>
-                    </div>
-                </div>
-
-                <div class="class-card">
-                    <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/How%20To%20Export%20videos%20in%20Premiere%20Pro%202025.jpg" 
-                         alt="How to export a video in Premiere Pro 2025" 
-                         class="class-thumbnail">
-                    <div class="class-content">
-                        <div class="class-header">
-                            <h3 class="class-title">Class 4</h3>
-                            <div class="class-badge">New</div>
-                        </div>
-                        <p class="class-description">How to export a video in Premiere Pro 2025</p>
-                        <a href="https://youtu.be/4-an7hKybxs" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="class-button">
-                            Enter Class 4
-                        </a>
-                    </div>
-                </div>
-
-                <div class="class-card">
-                    <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Class%205%20Adobe%20Premiere%20Pro%20Fundamentals%20And%20Importing%20System.jpg" 
-               alt="Adobe Premiere Pro Fundamentals And Importing System" 
-               class="class-thumbnail">
-             <div class="class-content">
-                   <div class="class-header">
-            <h3 class="class-title">Class 5</h3>
-            <div class="class-badge">New</div>
-                 </div>
-               <p class="class-description">Adobe Premiere Pro Fundamentals And Importing System</p>
-                <a href="https://youtu.be/Tjqz8rGbAgg" 
-                   target="_blank" 
-                rel="noopener noreferrer"
-                 class="class-button">
-               Enter Class 5
-                          </a>
-                      </div>
-                   </div>
-<div class="class-card">
-    <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/asdadads.png" 
-         alt="Modify Clips in Source Monitor and Transition Effects" 
-         class="class-thumbnail">
-    <div class="class-content">
-        <div class="class-header">
-            <h3 class="class-title">Class 6</h3>
-            <div class="class-badge">New</div>
-        </div>
-        <p class="class-description">Modify Clips in Source Monitor and Transition Effects</p>
-        <a href="https://youtu.be/ngQBCtdahvM" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="class-button">
-            Enter Class 6
-        </a>
-    </div>
-</div>
-                <div class="class-card">
-    <img src="images/Pr_class7_thumb.png" 
-         alt="Adobe Premiere Pro Sequence Interface" 
-         class="class-thumbnail">
-    <div class="class-content">
-        <div class="class-header">
-            <h3 class="class-title">Class 7</h3>
-        </div>
-        <p class="class-description">Adobe Premiere Pro Sequence Interface</p>
-        <a href="https://youtu.be/yGaWmxSX2YI" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="class-button">
-            Enter Class 7
-        </a>
-    </div>
-</div>
-            </div>
-        </div>
-    </div>
- <!-- Upcoming Courses Section -->
-<div class="course-section" style="background: linear-gradient(135deg, rgba(30, 136, 229, 0.08), rgba(66, 165, 245, 0.05)); border-color: rgba(30, 136, 229, 0.15);">
-    <div class="course-container">
-        <h2 class="course-title" style="background: linear-gradient(45deg, #1e88e5, #42a5f5); -webkit-text-stroke: 0; text-shadow: none;">
-            Upcoming Courses
-        </h2>
-        
-        <div class="classes-grid">
-<!-- Upcoming Courses Section -->
-<div class="course-section" style="position: relative; z-index: 1; min-height: auto;">
-    <div class="course-container">
-        <h2 class="course-title">Adobe Photoshop Zero to Hero Course</h2>
-        
+        <h2 class="course-title">Adobe Premiere Pro Zero to Hero Course</h2>
         <div class="classes-grid">
             <!-- Class 1 -->
             <div class="class-card">
-                <div class="class-thumbnail" style="background: #001d38; display: flex; justify-content: center; align-items: center; height: 180px;">
-                    <img src="images/Logo_Photoshop.png" alt="Photoshop" style="width: 80px; filter: drop-shadow(0 0 15px rgba(0,150,255,0.7));">
+                <div class="class-thumbnail">
+                    <img src="images/Premiere_Pro_Logo.png" alt="Premiere Pro">
+                </div>
+                <div class="class-content">
+                    <h3 class="class-title">Class 1</h3>
+                    <p class="class-description">Installation and Setup</p>
+                    <a href="https://youtu.be/yourlink" class="class-button">Watch Now</a>
+                </div>
+            </div>
+            <!-- Add Classes 2-6 following same structure -->
+        </div>
+    </div>
+
+    <!-- Photoshop Course Section -->
+    <div class="course-section">
+        <h2 class="course-title">Adobe Photoshop Zero to Hero Course</h2>
+        <div class="classes-grid">
+            <!-- Class 1 -->
+            <div class="class-card">
+                <div class="class-thumbnail">
+                    <img src="images/Logo_Photoshop.png" alt="Photoshop">
                 </div>
                 <div class="class-content">
                     <h3 class="class-title">Class 1</h3>
@@ -1446,77 +211,23 @@
                     <button class="class-button" disabled>Coming Soon</button>
                 </div>
             </div>
-            
-            <!-- Repeat for Classes 2-5 (same structure) -->
+            <!-- Add Classes 2-5 following same structure -->
         </div>
     </div>
-</div>
+
     <!-- Donation Section -->
     <div class="donation-section">
         <h3 class="donation-title">Support Our Mission</h3>
-        <p class="donation-description">
-            আমাদের লক্ষ্য হলো তরুণ প্রজন্মকে ডিজিটাল দক্ষতায় পারদর্শী করে তোলা। আপনার অনুদান আমাদের আরও বেশি শিক্ষার্থীর কাছে পৌঁছাতে এবং উন্নত শিক্ষামূলক কন্টেন্ট তৈরি করতে সাহায্য করবে।
-        </p>
-        <a href="#" class="donation-button">
-            💖 Donate Now
-        </a>
-        <p style="margin-top: 1rem; font-size: 0.9rem; color: #999;">
-            Payment details will be added soon
-        </p>
+        <p>Help us create more free educational content</p>
+        <button class="donation-button">Donate Now</button>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Payment details coming soon</p>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">        
-        <div class="footer-content">
-            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-                <img src="https://raw.githubusercontent.com/rjrefain/Learn2Earn/main/images/Learn_2_Earn_Banner-removebg-preview (1).png" 
-                     alt="Learn2Earn Banner" 
-                     class="footer-banner">
-                <div class="footer-email">contact@learn2earnbd.com</div>
-            </div>
-            <p class="footer-mission">
-                আমাদের লক্ষ্য হলো তরুণ প্রজন্মকে ডিজিটাল দক্ষতায় পারদর্শী করে তোলা। আমরা বিশ্বাস করি শিক্ষার্থীদের ব্যবহারিক জ্ঞান দিয়ে ক্ষমতায়ন করতে যা তাদের শেখার সাথে সাথে উপার্জন করতে সাহায্য করে।
-            </p>
-            <div class="footer-bottom">
-                © 2025 Learn2Earn. All rights reserved. | Empowering Digital Skills for the Future
-            </div>
-        </div>
+    <footer>
+        <p class="footer-email">contact@learn2earnbd.com</p>
+        <p>Empowering digital skills for the future</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">© 2023 Learn2Earn. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Add some interactive elements
-        document.addEventListener('DOMContentLoaded', function() {
-            const button = document.querySelector('.channel-button');
-            
-            // Add click animation
-            button.addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
-            });
-
-            // Create additional floating elements dynamically
-            function createFloatingElement() {
-                const element = document.createElement('div');
-                element.className = 'floating-circle';
-                element.style.width = element.style.height = Math.random() * 40 + 20 + 'px';
-                element.style.left = Math.random() * 100 + '%';
-                element.style.top = Math.random() * 100 + '%';
-                element.style.animationDelay = Math.random() * 6 + 's';
-                element.style.opacity = Math.random() * 0.3 + 0.1;
-                
-                document.querySelector('.floating-elements').appendChild(element);
-                
-                // Remove element after animation
-                setTimeout(() => {
-                    element.remove();
-                }, 12000);
-            }
-
-            // Create floating elements periodically
-            setInterval(createFloatingElement, 3000);
-        });
-    </script>
 </body>
 </html>
